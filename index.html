@@ -3,11 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HÍBRIDO | Portifólio de Rafaela da Silva</title>
+    <title>HÍBRIDO | Portfólio de Rafaela da Silva</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo básico do corpo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+        }
+
+        header img {
+            max-width: 150px;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin: 5px 0 0 0;
+            color: #666;
+        }
+
+        .intro, .project, .contact {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+            text-align: justify;
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <!-- Logo centralizada -->
+        <img src="Minhalogohibrido.png" alt="Logo Híbrido">
         <h1>HÍBRIDO</h1>
         <p>Portfólio de Rafaela da Silva</p>
     </header>
@@ -24,29 +111,29 @@
 
     <section class="gallery">
         <h2>Meus Trabalhos</h2>
-<div class="grid">
-    <img src="Minhalogohibrido.png" alt="Minha Logo Híbrido">
-    <img src="Atacadosaoleo2.png" alt="Atacado São Leo">
-    <img src="Atacadosaoleo3.png" alt="Atacado São Leo">
-    <img src="Atacadosaoleo4.png" alt="Atacado São Leo">
-    <img src="Atacadosaoleo.png" alt="Atacado São Leo">
-    <img src="Candycake2.png" alt="Candy Cake">
-    <img src="Candycake3.png" alt="Candy Cake">
-    <img src="Candycake4.png" alt="Candy Cake">
-    <img src="Candycake.png" alt="Candy Cake">
-    <img src="Alsco.png" alt="Alsco">
-    <img src="GATINHOSCAFE.png" alt="Gatinhos Café">
-    <img src="DRILLINGCOMPANY.png" alt="Drilling Company">
-    <img src="Construbem.png" alt="Construbem">
-    <img src="doTERRA.png" alt="Doterra">
-    <img src="HIDRAUFIT.png" alt="Hidraufit">
-    <img src="PetMorini2.png" alt="Pet Morini">
-    <img src="PetMorini.png" alt="Pet Morini">
-    <img src="Renoveimobiliaria2.png" alt="Renove Imobiliária">
-    <img src="Renoveimobiliaria3.png" alt="Renove Imobiliária">
-    <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária">
-    <img src="Renoveimobiliaria.png" alt="Renove Imobiliária">
-</div>
+        <div class="grid">
+            <img src="Minhalogohibrido.png" alt="Minha Logo Híbrido">
+            <img src="Atacadosaoleo2.png" alt="Atacado São Leo">
+            <img src="Atacadosaoleo3.png" alt="Atacado São Leo">
+            <img src="Atacadosaoleo4.png" alt="Atacado São Leo">
+            <img src="Atacadosaoleo.png" alt="Atacado São Leo">
+            <img src="Candycake2.png" alt="Candy Cake">
+            <img src="Candycake3.png" alt="Candy Cake">
+            <img src="Candycake4.png" alt="Candy Cake">
+            <img src="Candycake.png" alt="Candy Cake">
+            <img src="Alsco.png" alt="Alsco">
+            <img src="GATINHOSCAFE.png" alt="Gatinhos Café">
+            <img src="DRILLINGCOMPANY.png" alt="Drilling Company">
+            <img src="Construbem.png" alt="Construbem">
+            <img src="doTERRA.png" alt="Doterra">
+            <img src="HIDRAUFIT.png" alt="Hidraufit">
+            <img src="PetMorini2.png" alt="Pet Morini">
+            <img src="PetMorini.png" alt="Pet Morini">
+            <img src="Renoveimobiliaria2.png" alt="Renove Imobiliária">
+            <img src="Renoveimobiliaria3.png" alt="Renove Imobiliária">
+            <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária">
+            <img src="Renoveimobiliaria.png" alt="Renove Imobiliária">
+        </div>
     </section>
 
     <section class="contact">
@@ -57,5 +144,27 @@
     <footer>
         <p>&copy; 2025 Rafaela da Silva. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.grid img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
