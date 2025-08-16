@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HÍBRIDO | Portifólio de Rafaela da Silva</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: #fff;
@@ -18,29 +15,38 @@
             text-align: center;
         }
 
+        /* CABEÇALHO */
         header {
-            padding: 30px 20px;
+            background: #000;
+            color: #fff;
+            padding: 30px 15px;
         }
 
         header img {
-            max-width: 200px; /* logo maior */
+            max-width: 180px;
             display: block;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 10px auto;
         }
 
         header p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 0;
-            font-weight: 600;
-            color: #fff; /* branco como pediu */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            color: #fff;
+            font-weight: bold;
         }
 
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #111;
+        /* FOTO PESSOAL */
+        .profile-pic {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .profile-pic img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .intro, .project, .contact {
@@ -48,36 +54,27 @@
             margin: 20px auto;
             padding: 0 15px;
             text-align: justify;
-            line-height: 1.6;
         }
 
-        /* Se quiser foto pessoal */
-        .intro img {
-            max-width: 180px;
-            border-radius: 50%;
-            margin: 20px auto;
-            display: block;
-        }
-
+        /* GALERIA */
         .gallery {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 40px auto;
             padding: 0 15px;
         }
 
-        /* GRID em mosaico */
         .grid {
-            column-count: 4;
-            column-gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
         }
 
         .grid img {
             width: 100%;
-            margin-bottom: 10px;
+            height: auto;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: inline-block;
         }
 
         .grid img:hover {
@@ -85,20 +82,7 @@
             box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
         }
 
-        /* Responsivo */
-        @media (max-width: 900px) {
-            .grid {
-                column-count: 2;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .grid {
-                column-count: 1;
-            }
-        }
-
-        /* Lightbox */
+        /* LIGHTBOX */
         .lightbox {
             display: none;
             position: fixed;
@@ -107,7 +91,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.8);
             justify-content: center;
             align-items: center;
         }
@@ -118,23 +102,33 @@
             border-radius: 8px;
         }
 
+        /* RODAPÉ */
         footer {
-            margin: 40px 0 20px 0;
-            font-size: 0.9rem;
-            color: #777;
+            background: #000;
+            color: #fff;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <!-- CABEÇALHO -->
     <header>
         <img src="logo png.png" alt="Logo Híbrido">
         <p>Portifólio de Rafaela da Silva</p>
     </header>
 
-    <section class="intro">
-        <!-- Foto pessoal (opcional) -->
-        <!-- <img src="sua-foto.png" alt="Rafaela da Silva"> -->
+    <!-- FOTO PESSOAL -->
+    <div class="profile-pic">
+        <img src="eu.png" alt="Foto de Rafaela">
+    </div>
 
+    <section class="intro">
         <h2>Quem sou eu</h2>
         <p>Sou Designer Gráfico e desenvolvo identidades visuais estratégicas e marcantes, que unem propósito, estética e funcionalidade para comunicar de forma clara e envolvente. Meu trabalho busca criar marcas que não apenas sejam bonitas, mas que transmitam a essência e a visão de quem está por trás delas.<p>
         <p>Arte em movimento, marcas em transformação.</p>
@@ -146,44 +140,51 @@
         <p><strong>Ferramentas usadas:</strong> CorelDRAW, Canva</p>
     </section>
 
+    <!-- GALERIA -->
     <section class="gallery">
         <h2>Meus Trabalhos</h2>
         <div class="grid">
-            <img src="Minhalogohibrido.png" alt="Minha Logo Híbrido">
-            <img src="Atacadosaoleo2.png" alt="Atacado São Leo">
-            <img src="Atacadosaoleo3.png" alt="Atacado São Leo">
-            <img src="Atacadosaoleo4.png" alt="Atacado São Leo">
-            <img src="Atacadosaoleo.png" alt="Atacado São Leo">
-            <img src="Candycake2.png" alt="Candy Cake">
-            <img src="Candycake3.png" alt="Candy Cake">
-            <img src="Candycake4.png" alt="Candy Cake">
-            <img src="Candycake.png" alt="Candy Cake">
-            <img src="Alsco.png" alt="Alsco">
-            <img src="GATINHOSCAFE.png" alt="Gatinhos Café">
-            <img src="DRILLINGCOMPANY.png" alt="Drilling Company">
-            <img src="Construbem.png" alt="Construbem">
-            <img src="doTERRA.png" alt="Doterra">
-            <img src="HIDRAUFIT.png" alt="Hidraufit">
-            <img src="PetMorini2.png" alt="Pet Morini">
-            <img src="PetMorini.png" alt="Pet Morini">
-            <img src="Renoveimobiliaria2.png" alt="Renove Imobiliária">
-            <img src="Renoveimobiliaria3.png" alt="Renove Imobiliária">
-            <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária">
-            <img src="Renoveimobiliaria.png" alt="Renove Imobiliária">
+            <img src="Minhalogohibrido.png" alt="Minha Logo Híbrido" loading="lazy">
+            <img src="Atacadosaoleo2.png" alt="Atacado São Leo" loading="lazy">
+            <img src="Atacadosaoleo3.png" alt="Atacado São Leo" loading="lazy">
+            <img src="Atacadosaoleo4.png" alt="Atacado São Leo" loading="lazy">
+            <img src="Atacadosaoleo.png" alt="Atacado São Leo" loading="lazy">
+            <img src="Candycake2.png" alt="Candy Cake" loading="lazy">
+            <img src="Candycake3.png" alt="Candy Cake" loading="lazy">
+            <img src="Candycake4.png" alt="Candy Cake" loading="lazy">
+            <img src="Candycake.png" alt="Candy Cake" loading="lazy">
+            <img src="Alsco.png" alt="Alsco" loading="lazy">
+            <img src="GATINHOSCAFE.png" alt="Gatinhos Café" loading="lazy">
+            <img src="DRILLINGCOMPANY.png" alt="Drilling Company" loading="lazy">
+            <img src="Construbem.png" alt="Construbem" loading="lazy">
+            <img src="doTERRA.png" alt="Doterra" loading="lazy">
+            <img src="HIDRAUFIT.png" alt="Hidraufit" loading="lazy">
+            <img src="PetMorini2.png" alt="Pet Morini" loading="lazy">
+            <img src="PetMorini.png" alt="Pet Morini" loading="lazy">
+            <img src="Renoveimobiliaria2.png" alt="Renove Imobiliária" loading="lazy">
+            <img src="Renoveimobiliaria3.png" alt="Renove Imobiliária" loading="lazy">
+            <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária" loading="lazy">
+            <img src="Renoveimobiliaria.png" alt="Renove Imobiliária" loading="lazy">
         </div>
     </section>
 
+    <!-- CONTATO -->
     <section class="contact">
         <h2>Contato</h2>
         <p>E-mail: <a href="mailto:rafaela.slv@outlook.com">rafaela.slv@outlook.com</a></p>
-        <p>Whats: <a href="tel:+5551992099851">(51) 99209-9851</a></p>
+        <p>Whats: <a href="mailto:(51)99209-9851">(51)99209-9851</a></p>
     </section>
 
+    <!-- RODAPÉ -->
     <footer>
         <p>&copy; 2025 Rafaela da Silva. Todos os direitos reservados.</p>
+        <p>
+            E-mail: <a href="mailto:rafaela.slv@outlook.com">rafaela.slv@outlook.com</a> | 
+            Whats: <a href="mailto:(51)99209-9851">(51)99209-9851</a>
+        </p>
     </footer>
 
-    <!-- Lightbox -->
+    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
         <img src="" alt="">
     </div>
