@@ -46,7 +46,21 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.5); /* sombra mais forte */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Ajuste para celular */
+        @media (max-width: 600px) {
+            .profile-pic img {
+                width: 220px;
+                height: 220px;
+            }
         }
 
         .intro, .project, .contact {
@@ -119,13 +133,13 @@
 <body>
     <!-- CABEÇALHO -->
     <header>
-        <img src="logo png.png" alt="Logo Híbrido">
+        <img src="logo png.png" alt="Logo Híbrido" width="180" height="auto" loading="lazy">
         <p>Portifólio de Rafaela da Silva</p>
     </header>
 
     <!-- FOTO PESSOAL -->
     <div class="profile-pic">
-        <img src="eu.png" alt="Foto de Rafaela">
+        <img src="eu.png" alt="Foto de Rafaela" width="180" height="180" loading="lazy">
     </div>
 
     <section class="intro">
@@ -144,27 +158,27 @@
     <section class="gallery">
         <h2>Meus Trabalhos</h2>
         <div class="grid">
-            <img src="Minhalogohibrido.png" alt="Minha Logo Híbrido" loading="lazy">
-            <img src="Atacadosaoleo2.png" alt="Atacado São Leo" loading="lazy">
-            <img src="Atacadosaoleo3.png" alt="Atacado São Leo" loading="lazy">
-            <img src="Atacadosaoleo4.png" alt="Atacado São Leo" loading="lazy">
-            <img src="Atacadosaoleo.png" alt="Atacado São Leo" loading="lazy">
-            <img src="Candycake2.png" alt="Candy Cake" loading="lazy">
-            <img src="Candycake3.png" alt="Candy Cake" loading="lazy">
-            <img src="Candycake4.png" alt="Candy Cake" loading="lazy">
-            <img src="Candycake.png" alt="Candy Cake" loading="lazy">
-            <img src="Alsco.png" alt="Alsco" loading="lazy">
-            <img src="GATINHOSCAFE.png" alt="Gatinhos Café" loading="lazy">
-            <img src="DRILLINGCOMPANY.png" alt="Drilling Company" loading="lazy">
-            <img src="Construbem.png" alt="Construbem" loading="lazy">
-            <img src="doTERRA.png" alt="Doterra" loading="lazy">
-            <img src="HIDRAUFIT.png" alt="Hidraufit" loading="lazy">
-            <img src="PetMorini2.png" alt="Pet Morini" loading="lazy">
-            <img src="PetMorini.png" alt="Pet Morini" loading="lazy">
-            <img src="Renoveimobiliaria2.png" alt="Renove Imobiliária" loading="lazy">
-            <img src="Renoveimobiliaria3.png" alt="Renove Imobiliária" loading="lazy">
-            <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária" loading="lazy">
-            <img src="Renoveimobiliaria.png" alt="Renove Imobiliária" loading="lazy">
+            <img src="Minhalogohibrido.png" alt="Minha Logo Híbrido" width="400" height="400" loading="lazy">
+            <img src="Atacadosaoleo2.png" alt="Atacado São Leo" width="400" height="400" loading="lazy">
+            <img src="Atacadosaoleo3.png" alt="Atacado São Leo" width="400" height="400" loading="lazy">
+            <img src="Atacadosaoleo4.png" alt="Atacado São Leo" width="400" height="400" loading="lazy">
+            <img src="Atacadosaoleo.png" alt="Atacado São Leo" width="400" height="400" loading="lazy">
+            <img src="Candycake2.png" alt="Candy Cake" width="400" height="400" loading="lazy">
+            <img src="Candycake3.png" alt="Candy Cake" width="400" height="400" loading="lazy">
+            <img src="Candycake4.png" alt="Candy Cake" width="400" height="400" loading="lazy">
+            <img src="Candycake.png" alt="Candy Cake" width="400" height="400" loading="lazy">
+            <img src="Alsco.png" alt="Alsco" width="400" height="400" loading="lazy">
+            <img src="GATINHOSCAFE.png" alt="Gatinhos Café" width="400" height="400" loading="lazy">
+            <img src="DRILLINGCOMPANY.png" alt="Drilling Company" width="400" height="400" loading="lazy">
+            <img src="Construbem.png" alt="Construbem" width="400" height="400" loading="lazy">
+            <img src="doTERRA.png" alt="Doterra" width="400" height="400" loading="lazy">
+            <img src="HIDRAUFIT.png" alt="Hidraufit" width="400" height="400" loading="lazy">
+            <img src="PetMorini2.png" alt="Pet Morini" width="400" height="400" loading="lazy">
+            <img src="PetMorini.png" alt="Pet Morini" width="400" height="400" loading="lazy">
+            <img src="Renoveimobiliaria2.png" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
+            <img src="Renoveimobiliaria3.png" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
+            <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
+            <img src="Renoveimobiliaria.png" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
         </div>
     </section>
 
@@ -186,7 +200,7 @@
     </div>
 
     <script>
-        const images = document.querySelectorAll('.grid img');
+        const images = document.querySelectorAll('.grid img, .profile-pic img');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = lightbox.querySelector('img');
 
