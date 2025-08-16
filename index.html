@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HÍBRIDO | Portifólio de Rafaela da Silva</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
     <style>
-        /* Estilo básico do corpo */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background: #fff;
@@ -17,25 +19,28 @@
         }
 
         header {
-            padding: 20px;
+            padding: 30px 20px;
         }
 
         header img {
-            max-width: 150px;
+            max-width: 200px; /* logo maior */
             display: block;
-            margin: 0 auto 10px auto;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            font-weight: bold;
+            margin: 0 auto 15px auto;
         }
 
         header p {
-            font-size: 1rem;
-            margin: 5px 0 0 0;
-            color: #666;
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+            color: #fff; /* branco como pediu */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #111;
         }
 
         .intro, .project, .contact {
@@ -43,31 +48,54 @@
             margin: 20px auto;
             padding: 0 15px;
             text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Se quiser foto pessoal */
+        .intro img {
+            max-width: 180px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
         }
 
         .gallery {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 40px auto;
             padding: 0 15px;
         }
 
+        /* GRID em mosaico */
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            column-count: 4;
+            column-gap: 10px;
         }
 
         .grid img {
             width: 100%;
-            height: auto;
+            margin-bottom: 10px;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
         }
 
         .grid img:hover {
             transform: scale(1.03);
             box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                column-count: 1;
+            }
         }
 
         /* Lightbox */
@@ -79,7 +107,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             justify-content: center;
             align-items: center;
         }
@@ -89,16 +117,24 @@
             max-height: 90%;
             border-radius: 8px;
         }
+
+        footer {
+            margin: 40px 0 20px 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Logo centralizada -->
         <img src="logo png.png" alt="Logo Híbrido">
         <p>Portifólio de Rafaela da Silva</p>
     </header>
 
     <section class="intro">
+        <!-- Foto pessoal (opcional) -->
+        <!-- <img src="sua-foto.png" alt="Rafaela da Silva"> -->
+
         <h2>Quem sou eu</h2>
         <p>Sou Designer Gráfico e desenvolvo identidades visuais estratégicas e marcantes, que unem propósito, estética e funcionalidade para comunicar de forma clara e envolvente. Meu trabalho busca criar marcas que não apenas sejam bonitas, mas que transmitam a essência e a visão de quem está por trás delas.<p>
         <p>Arte em movimento, marcas em transformação.</p>
@@ -140,7 +176,7 @@
     <section class="contact">
         <h2>Contato</h2>
         <p>E-mail: <a href="mailto:rafaela.slv@outlook.com">rafaela.slv@outlook.com</a></p>
-        <p>Whats: <a href="mailto:(51)99209-9851">(51)99209-9851</a></p>
+        <p>Whats: <a href="tel:+5551992099851">(51) 99209-9851</a></p>
     </section>
 
     <footer>
