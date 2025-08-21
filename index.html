@@ -1,219 +1,159 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HÍBRIDO | Portifólio de Rafaela da Silva</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fff;
-            color: #333;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Híbrido - Portfólio</title>
+  <style>
+    /* ====== ESTILOS GERAIS ====== */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        /* CABEÇALHO */
-        header {
-            background: #000;
-            color: #fff;
-            padding: 30px 15px;
-        }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
 
-        header img {
-            max-width: 180px;
-            display: block;
-            margin: 0 auto 10px auto;
-        }
+    header img {
+      width: 120px;
+      animation: float 3s ease-in-out infinite; /* Logo flutuando */
+    }
 
-        header p {
-            font-size: 1.2rem;
-            margin: 0;
-            color: #fff;
-            font-weight: bold;
-        }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
 
-        /* FOTO PESSOAL */
-        .profile-pic {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-        }
+    header h1 {
+      margin-top: 10px;
+      font-size: 2.5rem;
+    }
 
-        .profile-pic img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            box-shadow: 0 6px 28px rgba(0,0,0,0.5); /* sombra mais forte */
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
 
-        .profile-pic img:hover {
-            transform: scale(1.05);
-        }
+    /* ====== SEÇÕES ====== */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        /* Ajuste para celular */
-        @media (max-width: 600px) {
-            .profile-pic img {
-                width: 220px;
-                height: 220px;
-            }
-        }
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-        .intro, .project, .contact {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 15px;
-            text-align: justify;
-        }
+    /* ====== GALERIA ====== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-        /* GALERIA */
-        .gallery {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 15px;
-        }
+    .grid img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 10px;
-        }
+    .grid img:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      filter: brightness(1.05);
+    }
 
-        .grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* ====== RODAPÉ ====== */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-        .grid img:hover {
-            transform: scale(1.03);
-            box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
-        }
+    /* ====== ANIMAÇÕES DE ENTRADA ====== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
 
-        /* LIGHTBOX */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-        }
-
-        /* RODAPÉ */
-        footer {
-            background: #000;
-            color: #fff;
-            padding: 20px 15px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-    </style>
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
-    <!-- CABEÇALHO -->
-    <header>
-        <img src="logo png.webp" alt="Logo Híbrido" width="500" height="auto" loading="lazy">
-        <p>Portifólio de Rafaela da Silva</p>
-    </header>
+  <!-- ====== TOPO ====== -->
+  <header>
+    <img src="portifolio/logo.png" alt="Logo Híbrido">
+    <h1>Híbrido</h1>
+    <p>Design gráfico e soluções visuais criativas</p>
+  </header>
 
-    <!-- FOTO PESSOAL -->
-    <div class="profile-pic">
-        <img src="eu.webp" alt="Foto de Rafaela" width="250" height="180" loading="lazy">
+  <!-- ====== INTRO ====== -->
+  <section class="intro fade-in">
+    <h2>Bem-vindo ao meu portfólio</h2>
+    <p>Sou designer gráfico apaixonada por transformar ideias em visuais impactantes. Aqui você encontra alguns dos meus principais projetos.</p>
+  </section>
+
+  <!-- ====== PROJETOS ====== -->
+  <section class="project fade-in">
+    <h2>Projetos em Destaque</h2>
+    <div class="grid">
+      <img src="portifolio/projeto1.png" alt="Projeto 1">
+      <img src="portifolio/projeto2.png" alt="Projeto 2">
+      <img src="portifolio/projeto3.png" alt="Projeto 3">
     </div>
+  </section>
 
-    <section class="intro">
-        <h2>Quem sou eu</h2>
-        <p>Sou Designer Gráfico e desenvolvo identidades visuais estratégicas e marcantes, que unem propósito, estética e funcionalidade para comunicar de forma clara e envolvente. Meu trabalho busca criar marcas que não apenas sejam bonitas, mas que transmitam a essência e a visão de quem está por trás delas.<p>
-        <p><strong>Arte em movimento, marcas em transformação.</strong></p>
-    </section>
-
-    <section class="project">
-        <h2>Híbrido</h2>
-        <p>A essência de um designer gráfico é a habilidade de criar soluções visuais eficazes para transmitir uma mensagem específica a um público alvo. Isso envolve uma combinação de habilidades técnicas, criatividade e compreensão das necessidades do cliente e do público. Assim como um “híbrido” organismo, objeto ou sistema que é o resultado da combinação de dois ou mais elementos diferentes.</p>
-        <p><strong>Ferramentas usadas:</strong> CorelDRAW, Canva</p>
-    </section>
-
-    <!-- GALERIA -->
-    <section class="gallery">
-        <h2>Meus Trabalhos</h2>
-        <div class="grid">
-            <img src="Minhalogohibrido.webp" alt="Minha Logo Híbrido" width="400" height="400" loading="lazy">
-            <img src="Atacadosaoleo2.webp" alt="Atacado São Leo" width="400" height="400" loading="lazy">
-            <img src="Atacadosaoleo3.webp" alt="Atacado São Leo" width="400" height="400" loading="lazy">
-            <img src="Atacadosaoleo4.webp" alt="Atacado São Leo" width="400" height="400" loading="lazy">
-            <img src="Atacadosaoleo.webp" alt="Atacado São Leo" width="400" height="400" loading="lazy">
-            <img src="Candycake2.webp" alt="Candy Cake" width="400" height="400" loading="lazy">
-            <img src="Candycake3.webp" alt="Candy Cake" width="400" height="400" loading="lazy">
-            <img src="Candycake4.webp" alt="Candy Cake" width="400" height="400" loading="lazy">
-            <img src="Candycake.webp" alt="Candy Cake" width="400" height="400" loading="lazy">
-            <img src="Alsco.webp" alt="Alsco" width="400" height="400" loading="lazy">
-            <img src="GATINHOSCAFE.webp" alt="Gatinhos Café" width="400" height="400" loading="lazy">
-            <img src="DRILLINGCOMPANY.webp" alt="Drilling Company" width="400" height="400" loading="lazy">
-            <img src="Construbem.webp" alt="Construbem" width="400" height="400" loading="lazy">
-            <img src="doTERRA.webp" alt="Doterra" width="400" height="400" loading="lazy">
-            <img src="HIDRAUFIT.webp" alt="Hidraufit" width="400" height="400" loading="lazy">
-            <img src="PetMorini2.webp" alt="Pet Morini" width="400" height="400" loading="lazy">
-            <img src="PetMorini.webp" alt="Pet Morini" width="400" height="400" loading="lazy">
-            <img src="Renoveimobiliaria2.webp" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
-            <img src="Renoveimobiliaria3.webp" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
-            <img src="Renoveimobiliaria4.png" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
-            <img src="Renoveimobiliaria.webp" alt="Renove Imobiliária" width="400" height="400" loading="lazy">
-        </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section class="contact">
-        <h2>Contato</h2>
-        <p>E-mail: <a href="mailto:rafaela.slv@outlook.com">rafaela.slv@outlook.com</a></p>
-        <p>Whats: <a href="mailto:(51)99209-9851">(51)99209-9851</a></p>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer>
-        <p>&copy; 2025 Rafaela da Silva. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-        <img src="" alt="">
+  <!-- ====== GALERIA ====== -->
+  <section class="gallery fade-in">
+    <h2>Galeria</h2>
+    <div class="grid">
+      <img src="portifolio/projeto4.png" alt="Projeto 4">
+      <img src="portifolio/projeto5.png" alt="Projeto 5">
+      <img src="portifolio/projeto6.png" alt="Projeto 6">
+      <img src="portifolio/projeto7.png" alt="Projeto 7">
     </div>
+  </section>
 
-    <script>
-        const images = document.querySelectorAll('.grid img, .profile-pic img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = lightbox.querySelector('img');
+  <!-- ====== RODAPÉ ====== -->
+  <footer class="fade-in">
+    <p>© 2025 Híbrido - Desenvolvido por Rafaela da Silva</p>
+  </footer>
 
-        images.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.style.display = 'flex';
-            });
-        });
+  <!-- ====== SCRIPT PARA ANIMAÇÃO AO ROLAR ====== -->
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-in');
 
-        lightbox.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-    </script>
+    function handleScroll() {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // chama no carregamento
+  </script>
 </body>
 </html>
